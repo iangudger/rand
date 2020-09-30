@@ -11,6 +11,12 @@ import (
 	"math/rand"
 )
 
+// Type aliases to avoid needing to import both packages.
+type(
+	Source = rand.Source
+	Rand = rand.Rand
+)
+
 // NewSource returns a new pseudo-random rand.Source powered by crypto/rand.
 func NewSource() rand.Source {
 	return &source{crand.Reader}
